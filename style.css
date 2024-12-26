@@ -1,0 +1,73 @@
+/* Alap stílusok */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* Konténer a teljes középre helyezéshez */
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* A felhő stílusa */
+.cloud {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ff00ff;
+  width: 200px;
+  height: 120px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #ff00ff;
+}
+
+.cloud::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  width: 150px;
+  height: 60px;
+  background: #ff00ff;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+/* A "MATRIX RAIN" felirat */
+.label {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+}
+
+/* Az esőcseppek stílusa */
+.drop {
+  position: absolute;
+  color: #ff00ff;
+  font-size: 1em;
+  animation: fall linear;
+}
+
+@keyframes fall {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
